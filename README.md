@@ -3,13 +3,11 @@ The app gets data from NBP datasets using API on daily basis (bank holidays excl
 
 In order to open this app on your desktop, run below code in RStudio:
 
-if (!require("shiny")) install.packages("shiny")
-
-list.of.packages <- c("ggplot2", "Rcpp")
-new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
-if(length(new.packages)) install.packages(new.packages)
-
 ``
+req_packages <- c("httr","jsonlite","tidyverse","shiny","rvest")
+new_packages <- req_packages[!(req_packages %in% installed.packages()[,"Package"])]
+if(length(new_packages)) install.packages(new_packages)
+
 shiny::runGitHub("NBP-web-scraper","wiktorpiela")
 ``
 or use this link because app is located on shiny apps server :
